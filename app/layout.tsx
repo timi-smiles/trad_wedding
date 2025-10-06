@@ -17,8 +17,8 @@ export const metadata: Metadata = {
   description: "Join us as we celebrate our traditional Wedding",
   generator: "v0.app",
   icons: {
-    icon: '/14.jpg',
-    apple: '/14.jpg',
+    icon: '/13.jpg',
+    apple: '/13.jpg',
   },
 }
 
