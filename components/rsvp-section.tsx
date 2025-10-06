@@ -142,41 +142,16 @@ ${message}
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.8, delay: 0.2, ease: [0.25, 0.46, 0.45, 0.94] }}
+          className="relative bg-card rounded-2xl md:rounded-3xl border border-border/50 p-6 sm:p-8 md:p-10 lg:p-12 backdrop-blur-sm shadow-[0_0_60px_-15px_rgba(0,0,0,0.3)]"
         >
-          <motion.div
-            animate={{ 
-              boxShadow: [
-                "0 10px 40px -5px rgba(0,0,0,0.1), 0 0 0 1px rgba(0,0,0,0.05)",
-                "0 20px 60px -5px rgba(0,0,0,0.15), 0 0 0 1px rgba(0,0,0,0.08)",
-                "0 10px 40px -5px rgba(0,0,0,0.1), 0 0 0 1px rgba(0,0,0,0.05)"
-              ],
-              scale: [1, 1.005, 1]
-            }}
-            transition={{ 
-              duration: 4,
-              repeat: Infinity,
-              ease: "easeInOut"
-            }}
-            className="relative bg-card rounded-2xl md:rounded-3xl border border-border/50 p-6 sm:p-8 md:p-10 lg:p-12 backdrop-blur-sm"
-          >
-            {/* Decorative corner accents */}
-            <div className="absolute top-0 left-0 w-16 h-16 md:w-20 md:h-20 border-t-2 border-l-2 border-accent/30 rounded-tl-2xl md:rounded-tl-3xl" />
-            <div className="absolute bottom-0 right-0 w-16 h-16 md:w-20 md:h-20 border-b-2 border-r-2 border-accent/30 rounded-br-2xl md:rounded-br-3xl" />
-            
-            {/* Breathing glow effect */}
-            <motion.div
-              animate={{ 
-                opacity: [0.3, 0.6, 0.3]
-              }}
-              transition={{ 
-                duration: 3,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
-              className="absolute inset-0 bg-gradient-to-br from-accent/5 via-transparent to-primary/5 rounded-2xl md:rounded-3xl pointer-events-none"
-            />
+          {/* Decorative corner accents */}
+          <div className="absolute top-0 left-0 w-16 h-16 md:w-20 md:h-20 border-t-2 border-l-2 border-accent/30 rounded-tl-2xl md:rounded-tl-3xl" />
+          <div className="absolute bottom-0 right-0 w-16 h-16 md:w-20 md:h-20 border-b-2 border-r-2 border-accent/30 rounded-br-2xl md:rounded-br-3xl" />
+          
+          {/* Static subtle glow effect */}
+          <div className="absolute inset-0 bg-gradient-to-br from-accent/5 via-transparent to-primary/5 rounded-2xl md:rounded-3xl pointer-events-none" />
 
-            <form onSubmit={handleSubmit} className="space-y-6 md:space-y-7 relative z-10">
+          <form onSubmit={handleSubmit} className="space-y-6 md:space-y-7 relative z-10">
             <div className="space-y-2">
               <Label htmlFor="name" className="text-foreground">
                 Full Name *
@@ -371,7 +346,6 @@ ${message}
               </Button>
             </motion.div>
           </form>
-          </motion.div>
         </motion.div>
       </div>
     </section>
