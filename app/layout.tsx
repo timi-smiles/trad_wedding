@@ -16,6 +16,10 @@ export const metadata: Metadata = {
   title: "Ayomide ❤️ Adekunle | #AyoKunle2025",
   description: "Join us as we celebrate our traditional Wedding",
   generator: "v0.app",
+  icons: {
+    icon: '/14.jpg',
+    apple: '/14.jpg',
+  },
 }
 
 export default function RootLayout({

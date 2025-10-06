@@ -68,7 +68,7 @@ ${message}
     `.trim()
 
     // WhatsApp number (without + and spaces)
-    const phoneNumber = "2348160808720"
+    const phoneNumber = "2348081481556"
     
     // Create WhatsApp URL
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappMessage)}`
