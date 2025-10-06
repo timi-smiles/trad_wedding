@@ -5,7 +5,6 @@ import { GeistMono } from "geist/font/mono"
 import { Playfair_Display } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
-import { Suspense } from "react"
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -27,7 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="overflow-x-hidden">
       <body className={`font-sans overflow-x-hidden ${GeistSans.variable} ${GeistMono.variable} ${playfair.variable}`}>
-        <Suspense fallback={<div>Loading...</div>}>{children}</Suspense>
+        {children}
         <Analytics />
       </body>
     </html>
