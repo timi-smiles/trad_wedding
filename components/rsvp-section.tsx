@@ -53,35 +53,38 @@ export function RsvpSection() {
     const name = formData.get("name") as string
     const email = formData.get("email") as string
     const message = formData.get("message") as string
-    const attendanceStatus = attendance === "accept" ? "Joyfully Accept " : "Decline "
+    const attendanceStatus = attendance === "accept" ? "Joyfully Accept ✅" : "Regretfully Decline ❌"
 
-    // Create WhatsApp message
-    const whatsappMessage = `
-🎊 *WEDDING RSVP* 🎊
+    // Create email body
+    const emailSubject = `Wedding RSVP from ${name}`
+    const emailBody = `
+Wedding RSVP Submission
+━━━━━━━━━━━━━━━━━━━━
 
- *Name:* ${name}
- *Email:* ${email}
- *Attendance:* ${attendanceStatus}
+Name: ${name}
+Email: ${email}
+Attendance: ${attendanceStatus}
 
-*Message:*
+Message:
 ${message}
+
+━━━━━━━━━━━━━━━━━━━━
+Sent from Wedding RSVP Form
     `.trim()
 
-    // WhatsApp number (without + and spaces)
-    const phoneNumber = "2348081481556"
-    
-    // Create WhatsApp URL
-    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappMessage)}`
+    // Create mailto URL
+    const recipientEmail = "mujaheed4success@gmail.com" // Replace with your email address
+    const mailtoUrl = `mailto:${recipientEmail}?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`
 
     // Small delay for better UX
     await new Promise((resolve) => setTimeout(resolve, 800))
 
-    // Open WhatsApp in new tab
-    window.open(whatsappUrl, "_blank")
+    // Open email client
+    window.location.href = mailtoUrl
 
     toast({
-      title: "RSVP Received! 🎉",
-      description: "Redirecting you to WhatsApp to send your response. We can't wait to celebrate with you!",
+      title: "RSVP Ready! 📧",
+      description: "Opening your email client. Please send the message to complete your RSVP.",
     })
 
     setIsSubmitting(false)
