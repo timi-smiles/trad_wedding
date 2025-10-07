@@ -133,8 +133,8 @@ export function GallerySection() {
                 amount: 0.3
               }}
               transition={{ 
-                duration: 0.6,
-                delay: index * 0.08,
+                duration: 0.4,
+                delay: index * 0.05,
                 ease: [0.25, 0.46, 0.45, 0.94]
               }}
               className="break-inside-avoid mb-3 md:mb-4"
@@ -143,7 +143,7 @@ export function GallerySection() {
                 whileHover={{ 
                   y: -8,
                   scale: 1.02,
-                  transition: { duration: 0.3, ease: "easeOut" }
+                  transition: { duration: 0.2, ease: "easeOut" }
                 }}
                 whileTap={{ scale: 0.98 }}
                 className="relative overflow-hidden rounded-xl md:rounded-2xl shadow-lg group cursor-pointer"
