@@ -68,8 +68,6 @@ Attendance: ${attendanceStatus}
 Message:
 ${message}
 
-━━━━━━━━━━━━━━━━━━━━
-Sent from Wedding RSVP Form
     `.trim()
 
     // Create mailto URL
