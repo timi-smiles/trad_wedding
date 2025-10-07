@@ -84,7 +84,6 @@ export function LoadingAnimation() {
               <motion.div
                 animate={{
                   scale: [1, 1.2, 1],
-                  opacity: [0.5, 1, 0.5],
                 }}
                 transition={{
                   duration: 1.5,
@@ -93,8 +92,86 @@ export function LoadingAnimation() {
                 }}
                 className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
               >
-                <svg className="w-8 h-8 md:w-10 md:h-10 text-accent drop-shadow-lg" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                <svg className="w-10 h-10 md:w-12 md:h-12" viewBox="0 0 100 100">
+                  <defs>
+                    <linearGradient id="loadingHeartGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stopColor="#ff6b6b" />
+                      <stop offset="50%" stopColor="#ee5a6f" />
+                      <stop offset="100%" stopColor="#c44569" />
+                    </linearGradient>
+                    <filter id="loadingGlow">
+                      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+                      <feMerge>
+                        <feMergeNode in="coloredBlur"/>
+                        <feMergeNode in="SourceGraphic"/>
+                      </feMerge>
+                    </filter>
+                  </defs>
+                  <motion.path
+                    d="M50,85 C50,85 15,60 15,40 C15,28 23,20 32,20 C38,20 43,23 50,30 C57,23 62,20 68,20 C77,20 85,28 85,40 C85,60 50,85 50,85 Z"
+                    fill="url(#loadingHeartGradient)"
+                    filter="url(#loadingGlow)"
+                    animate={{
+                      fill: [
+                        "url(#loadingHeartGradient)",
+                        "#ff6b6b",
+                        "url(#loadingHeartGradient)"
+                      ]
+                    }}
+                    transition={{
+                      duration: 2,
+                      repeat: Number.POSITIVE_INFINITY,
+                      ease: "easeInOut"
+                    }}
+                  />
+                  {/* Sparkle effects */}
+                  <motion.circle
+                    cx="30"
+                    cy="35"
+                    r="2"
+                    fill="white"
+                    animate={{
+                      opacity: [0, 1, 0],
+                      scale: [0, 1, 0]
+                    }}
+                    transition={{
+                      duration: 2,
+                      repeat: Number.POSITIVE_INFINITY,
+                      ease: "easeInOut"
+                    }}
+                  />
+                  <motion.circle
+                    cx="70"
+                    cy="35"
+                    r="2"
+                    fill="white"
+                    animate={{
+                      opacity: [0, 1, 0],
+                      scale: [0, 1, 0]
+                    }}
+                    transition={{
+                      duration: 2,
+                      repeat: Number.POSITIVE_INFINITY,
+                      ease: "easeInOut",
+                      delay: 0.5
+                    }}
+                  />
+                  <motion.circle
+                    cx="50"
+                    cy="50"
+                    r="3"
+                    fill="white"
+                    animate={{
+                      opacity: [0, 1, 0],
+                      scale: [0, 1, 0]
+                    }}
+                    transition={{
+                      duration: 2,
+                      repeat: Number.POSITIVE_INFINITY,
+                      ease: "easeInOut",
+                      delay: 1
+                    }}
+                  />
                 </svg>
               </motion.div>
             </div>

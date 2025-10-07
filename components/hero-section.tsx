@@ -67,9 +67,100 @@ export function HeroSection() {
               initial={{ opacity: 0, scale: 0 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 3.5 }}
-              className="text-accent block text-4xl sm:text-5xl lg:text-7xl xl:text-8xl text-center"
+              className="text-accent block text-4xl sm:text-5xl lg:text-7xl xl:text-8xl text-center flex justify-center items-center"
             >
-              ❤️
+              <motion.svg
+                className="w-16 h-16 sm:w-20 sm:h-20 lg:w-28 lg:h-28 xl:w-32 xl:h-32"
+                viewBox="0 0 100 100"
+                animate={{
+                  scale: [1, 1.1, 1],
+                }}
+                transition={{
+                  duration: 1.5,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+              >
+                <defs>
+                  <linearGradient id="heartGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#ff6b6b" />
+                    <stop offset="50%" stopColor="#ee5a6f" />
+                    <stop offset="100%" stopColor="#c44569" />
+                  </linearGradient>
+                  <filter id="glow">
+                    <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+                    <feMerge>
+                      <feMergeNode in="coloredBlur"/>
+                      <feMergeNode in="SourceGraphic"/>
+                    </feMerge>
+                  </filter>
+                </defs>
+                <motion.path
+                  d="M50,85 C50,85 15,60 15,40 C15,28 23,20 32,20 C38,20 43,23 50,30 C57,23 62,20 68,20 C77,20 85,28 85,40 C85,60 50,85 50,85 Z"
+                  fill="url(#heartGradient)"
+                  filter="url(#glow)"
+                  animate={{
+                    fill: [
+                      "url(#heartGradient)",
+                      "#ff6b6b",
+                      "url(#heartGradient)"
+                    ]
+                  }}
+                  transition={{
+                    duration: 2,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                />
+                {/* Sparkle effects */}
+                <motion.circle
+                  cx="30"
+                  cy="35"
+                  r="2"
+                  fill="white"
+                  animate={{
+                    opacity: [0, 1, 0],
+                    scale: [0, 1, 0]
+                  }}
+                  transition={{
+                    duration: 2,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                />
+                <motion.circle
+                  cx="70"
+                  cy="35"
+                  r="2"
+                  fill="white"
+                  animate={{
+                    opacity: [0, 1, 0],
+                    scale: [0, 1, 0]
+                  }}
+                  transition={{
+                    duration: 2,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                    delay: 0.5
+                  }}
+                />
+                <motion.circle
+                  cx="50"
+                  cy="50"
+                  r="3"
+                  fill="white"
+                  animate={{
+                    opacity: [0, 1, 0],
+                    scale: [0, 1, 0]
+                  }}
+                  transition={{
+                    duration: 2,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                    delay: 1
+                  }}
+                />
+              </motion.svg>
             </motion.span>
             <motion.span 
               initial={{ opacity: 0, x: 50 }}
