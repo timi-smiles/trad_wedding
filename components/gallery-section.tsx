@@ -10,6 +10,16 @@ const photos = [
     tall: true,
   },
   {
+    src: "/21.jpg",
+    alt: "",
+    tall: true,
+  },
+  {
+    src: "/22.jpg",
+    alt: "",
+    tall: true,
+  },
+  {
     src: "/13.jpg",
     alt: "",
     tall: false,
