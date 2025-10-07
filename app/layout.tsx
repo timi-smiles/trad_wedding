@@ -13,7 +13,7 @@ const playfair = Playfair_Display({
 })
 
 export const metadata: Metadata = {
-  title: "Ayomide ❤️ Adekunle | #AyoKunle2025",
+  title: "Ayomide ❤️ Adekunle | #AyoAde2025",
   description: "Join us as we celebrate our traditional Wedding",
   generator: "v0.app",
   icons: {
